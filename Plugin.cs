@@ -1,7 +1,6 @@
 ﻿using BepInEx;
 using UnityEngine;
 using TMPro;
-using System;
 using System.Collections.Generic;
 
 namespace Gooeey
@@ -9,13 +8,15 @@ namespace Gooeey
     [BepInPlugin("raisin.plugins.gooeey", PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
-        public List<TextMeshProUGUI> textObjects = new List<TextMeshProUGUI>();
         private void Awake()
         {
             Logger.LogInfo($"raisin.plugins.gooeey v{PluginInfo.PLUGIN_VERSION} - Gooeey successfully loaded.");
         }
-
-        public TextMeshProUGUI CreateText(string name, string text){ // Create a new Text object
+    }
+    public class Gooeey
+    {
+        public List<TextMeshProUGUI> textObjects = new List<TextMeshProUGUI>();
+        public TextMeshProUGUI CreateText(string name, string text){ // Create a new text object
             GameObject textObject = new GameObject(name);
             textObject.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             TextMeshProUGUI tmp = textObject.AddComponent<TextMeshProUGUI>();
@@ -29,7 +30,7 @@ namespace Gooeey
             textObjects.Add(tmp);
             return tmp;
         }
-        public TextMeshProUGUI FindText(string name){
+        public TextMeshProUGUI FindText(string name){ // Find a text object by name
             foreach(TextMeshProUGUI tmp in textObjects){
                 if(tmp.gameObject.name == name){
                     return tmp;
