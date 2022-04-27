@@ -1,5 +1,6 @@
 # Gooeey
 Gooeey is a Stick Fight UI helper plugin for BepInEx. It is intended to help other plugins easily add UI elements, such as text and overlays.
+
 This plugin does not do anything by itself. It is only designed to be included in plugins as a dependency.
 
 ## Installation
@@ -11,4 +12,8 @@ If you want to use Gooeey in your plugins, follow the same steps as above to dow
 <Reference Include='Gooeey'>
 	<HintPath>%STICK FIGHT FOLDER%\BepInEx\plugins\Gooeey.ddl</HintPath>
 </Reference>
+```
+and add it as a dependency in the main .cs file:
+```cs
+[BepInDependency("raisin.plugins.gooeey", BepInDependency.DependencyFlags.HardDependency)]
 ```
