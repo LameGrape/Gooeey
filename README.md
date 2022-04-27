@@ -23,25 +23,14 @@ add it as a dependency in the main .cs file:
 ```cs
 [BepInDependency("raisin.plugins.gooeey", BepInDependency.DependencyFlags.HardDependency)]
 ```
-and finally, add a using directive:
+and finally, add using directives:
 ```cs
 using Gooeey;
+using TMPro;
 ```
-All the Gooeey functions should now be available in your plugin.
+Gooeey should now be imported into the project.
 
-# Documentation
-
-## Functions
-
-### Gooeey.CreateText(string name, string text) : TextMeshProUGUI
-Creates a text object and returns it. The text object is also saved to Gooeey.textObjects.
-
-* _name_ : The name of the GameObject to be created. The name is used to search for the text object in Gooeey.FindText.
-* _text_ : The text to be displayed. This can be changed at any time by saving the returned TextMeshProUGUI as a variable, or fetching the text object with Gooeey.FindText.
-
-#### Example
+Due to the way Gooeey is made, the Gooeey class must be declared before the functions can be used. Therefore, it is suggested to make a global UI variable for Gooeey:
 ```cs
-TextMeshProUGUI text = Gooeey.CreateText("Example", "This is a Gooeey example.")
-text.fontSize = 50;
-text.color = Color.green;
+Gooeey UI = new Gooeey();
 ```
