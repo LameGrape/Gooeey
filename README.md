@@ -30,5 +30,5 @@ All the Gooeey functions should now be available in your plugin.
 ### Gooeey.CreateText(string name, string text) : TextMeshProUGUI
 Creates a text object and returns it. The text object is also saved to Gooeey.textObjects.
 
-* __name__ : The name of the GameObject to be created. The name is used to search for the text object in Gooeey.FindText.
-* __text__ : The text to be displayed. This can be changed at any time by saving the returned TextMeshProUGUI as a variable, or fetching the text object with Gooeey.FindText.
+* ++name++ : The name of the GameObject to be created. The name is used to search for the text object in Gooeey.FindText.
+* ++text++ : The text to be displayed. This can be changed at any time by saving the returned TextMeshProUGUI as a variable, or fetching the text object with Gooeey.FindText.
