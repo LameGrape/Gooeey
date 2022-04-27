@@ -10,10 +10,17 @@ To download the latest version of Gooeey, go to the releases tab on the right an
 If you want to use Gooeey in your plugins, follow the same steps as above to download Gooeey. Then, in your plugin's .csproj file, add it as a reference in an ItemGroup (if you already reference Assemly-CSharp or Unity libraries, this should be in the same ItemGroup):
 ```xml
 <Reference Include='Gooeey'>
-	<HintPath>%STICK FIGHT FOLDER%\BepInEx\plugins\Gooeey.ddl</HintPath>
+	<HintPath>%STICK FIGHT FOLDER%\BepInEx\plugins\Gooeey.dll</HintPath>
 </Reference>
 ```
-and add it as a dependency in the main .cs file:
+add it as a dependency in the main .cs file:
 ```cs
 [BepInDependency("raisin.plugins.gooeey", BepInDependency.DependencyFlags.HardDependency)]
 ```
+and finally, add a using directive:
+```cs
+using Gooeey;
+```
+All the Gooeey functions should now be available in your plugin.
+
+## Documentation
