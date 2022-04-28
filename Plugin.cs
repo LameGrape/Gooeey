@@ -13,7 +13,7 @@ namespace Gooeey
             Logger.LogInfo($"raisin.plugins.gooeey v{PluginInfo.PLUGIN_VERSION} - Gooeey successfully loaded.");
         }
     }
-    public class Gooeey
+    public class GooeeyUI
     {
         public List<TextMeshProUGUI> textObjects = new List<TextMeshProUGUI>();
         public TextMeshProUGUI CreateText(string name, string text){ // Create a new text object
